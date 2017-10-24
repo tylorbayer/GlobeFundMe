@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 26
@@ -32,6 +33,7 @@ dependencies {
     compile 'com.esri.arcgis.android:arcgis-android:10.2.9'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
+    compile 'com.google.android.gms:play-services-auth:9.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "180488649338",
+    "project_id": "globefundme"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180488649338:android:d95bb678ab9f6bd7",
+        "android_client_info": {
+          "package_name": "com.tylorbayer.globefundme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180488649338-ba2o98gk3q07670flghcluntf24jcs81.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tylorbayer.globefundme",
+            "certificate_hash": "20c8ef8748abf11f3a8b0fec396cd87c91696cb6"
+          }
+        },
+        {
+          "client_id": "180488649338-4931lmt3rcmq4ecbkj6hfhb8fuppukj5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUZf2pdUeCB4ZeYnNN4JBewI3W8Tn8W0A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
