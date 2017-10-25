@@ -8,11 +8,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import com.esri.android.map.Layer;
 import com.esri.android.map.MapView;
@@ -33,6 +36,11 @@ import com.esri.core.tasks.ags.query.QueryTask;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static android.view.Gravity.CENTER;
+import static android.view.Gravity.LEFT;
+import static android.view.Gravity.NO_GRAVITY;
+import static android.view.Gravity.START;
+
 public class MainActivity extends AppCompatActivity {
     private MapView map;
     private PopupContainer popupContainer;
@@ -45,7 +53,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        final View popupView = layoutInflater.inflate(R.layout.popup, null);
+
+        final PopupWindow popupWindow = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
         map = (MapView) findViewById(R.id.mapView);
+        Layer[] layers = map.getLayers();
+            for (Layer layer : layers) {
+                Log.d("Debug", layer.getName());
+                if (!layer.getName().equals("Layers")) {
+                    if (!layer.isInitialized())
+                        continue;
+                    else {
+                        layer.setVisible(false);
+                    }
+                }
+            }
 
         // Tap on the map and show popups for selected features.
         map.setOnSingleTapListener(new OnSingleTapListener() {
@@ -53,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onSingleTap(float x, float y) {
                 if (map.isLoaded()) {
+                    popupWindow.dismiss();
                     // Instantiate a PopupContainer
                     popupContainer = new PopupContainer(map);
                     int id = popupContainer.hashCode();
@@ -122,24 +147,153 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (map.isLoaded()) {
-                    Layer[] layers = map.getLayers();
-                    for (Layer layer : layers) {
-                        Log.d("Debug", layer.getName());
-                        if (!layer.getName().equals("Layers")) {
-                            if (!layer.isInitialized())
-                                continue;
-                            else if (!layer.isVisible())
-                                layer.setVisible(true);
-                            else {
-                                layer.setVisible(false);
+//                if (map.isLoaded()) {
+//                    Layer[] layers = map.getLayers();
+//                    for (Layer layer : layers) {
+//                        Log.d("Debug", layer.getName());
+//                        if (!layer.getName().equals("Layers")) {
+//                            if (!layer.isInitialized())
+//                                continue;
+//                            else if (!layer.isVisible())
+//                                layer.setVisible(true);
+//                            else {
+//                                layer.setVisible(false);
+//                            }
+//                        }
+//                    }
+//                }
+                if (popupWindow.isShowing() == false) {
+
+                    Button btnCW = popupView.findViewById(R.id.cw);
+                    Button btnEDU = popupView.findViewById(R.id.edu);
+                    Button btnENV = popupView.findViewById(R.id.env);
+                    Button btnDR = popupView.findViewById(R.id.dr);
+                    Button btnHE = popupView.findViewById(R.id.he);
+                    Button btnZeren = popupView.findViewById(R.id.zeren);
+                    Button btnQuakes = popupView.findViewById(R.id.quakes);
+                    Button btnHuman = popupView.findViewById(R.id.human);
+                    Button btnliteracy = popupView.findViewById(R.id.literacy);
+                    Button btnNourish = popupView.findViewById(R.id.nourish);
+
+                    btnCW.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(10).isVisible() == true) {
+                                map.getLayer(10).setVisible(false);
+                            } else {
+                                map.getLayer(10).setVisible(true);
                             }
                         }
-                    }
+                    });
+                    btnEDU.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(9).isVisible() == true) {
+                                map.getLayer(9).setVisible(false);
+                            } else {
+                                map.getLayer(9).setVisible(true);
+                            }
+                        }
+                    });
+                    btnENV.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(8).isVisible() == true) {
+                                map.getLayer(8).setVisible(false);
+                            } else {
+                                map.getLayer(8).setVisible(true);
+                            }
+                        }
+                    });
+                    btnDR.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(7).isVisible() == true) {
+                                map.getLayer(7).setVisible(false);
+                            } else {
+                                map.getLayer(7).setVisible(true);
+                            }
+                        }
+                    });
+                    btnHE.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(6).isVisible() == true) {
+                                map.getLayer(6).setVisible(false);
+                            } else {
+                                map.getLayer(6).setVisible(true);
+                            }
+                        }
+                    });
+                    btnZeren.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(5).isVisible() == true) {
+                                map.getLayer(5).setVisible(false);
+                            } else {
+                                map.getLayer(5).setVisible(true);
+                            }
+                        }
+                    });
+                    btnQuakes.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(4).isVisible() == true) {
+                                map.getLayer(4).setVisible(false);
+                            } else {
+                                map.getLayer(4).setVisible(true);
+                            }
+                        }
+                    });
+                    btnHuman.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(3).isVisible() == true) {
+                                map.getLayer(3).setVisible(false);
+                            } else {
+                                map.getLayer(3).setVisible(true);
+                            }
+                        }
+                    });
+                    btnliteracy.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(2).isVisible() == true) {
+                                map.getLayer(2).setVisible(false);
+                            } else {
+                                map.getLayer(2).setVisible(true);
+                            }
+                        }
+                    });
+                    btnNourish.setOnClickListener(new Button.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            if (map.getLayer(1).isVisible() == true) {
+                                map.getLayer(1).setVisible(false);
+                            } else {
+                                map.getLayer(1).setVisible(true);
+                            }
+                        }
+                    });
+
+                    popupWindow.showAtLocation(map, START, 0, 90);
+                }
+                else {
+                    popupWindow.dismiss();
                 }
             }
         });
