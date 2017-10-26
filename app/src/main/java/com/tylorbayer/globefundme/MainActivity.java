@@ -192,11 +192,7 @@ public class MainActivity extends AppCompatActivity {
                     final Button btnENV = popupView.findViewById(R.id.env);
                     final Button btnDR = popupView.findViewById(R.id.dr);
                     final Button btnHE = popupView.findViewById(R.id.he);
-                    final Button btnZeren = popupView.findViewById(R.id.zeren);
-                    final Button btnQuakes = popupView.findViewById(R.id.quakes);
-                    final Button btnHuman = popupView.findViewById(R.id.human);
-                    final Button btnliteracy = popupView.findViewById(R.id.literacy);
-                    final Button btnNourish = popupView.findViewById(R.id.nourish);
+//                    final Button btnZeren = popupView.findViewById(R.ivisi
 
                     btnCW.setOnClickListener(new Button.OnClickListener() {
                         @Override
