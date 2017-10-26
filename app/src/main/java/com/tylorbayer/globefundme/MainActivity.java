@@ -36,9 +36,8 @@ import com.esri.core.tasks.ags.query.QueryTask;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static android.view.Gravity.CENTER;
-import static android.view.Gravity.LEFT;
-import static android.view.Gravity.NO_GRAVITY;
+import static android.graphics.Color.CYAN;
+import static android.graphics.Color.LTGRAY;
 import static android.view.Gravity.START;
 
 public class MainActivity extends AppCompatActivity {
@@ -99,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         if (layer instanceof ArcGISFeatureLayer) {
                             // Query feature layer and display popups
                             ArcGISFeatureLayer featureLayer = (ArcGISFeatureLayer) layer;
-                            if (featureLayer.getPopupInfo() != null) {
+                            if (featureLayer.getPopupInfo() != null && featureLayer.isVisible() == true) {
                                 // Query feature layer which is associated with a popup definition.
                                 count.incrementAndGet();
                                 new RunQueryFeatureLayerTask(x, y, tolerance, id).execute(featureLayer);
@@ -168,16 +167,16 @@ public class MainActivity extends AppCompatActivity {
 //                }
                 if (popupWindow.isShowing() == false) {
 
-                    Button btnCW = popupView.findViewById(R.id.cw);
-                    Button btnEDU = popupView.findViewById(R.id.edu);
-                    Button btnENV = popupView.findViewById(R.id.env);
-                    Button btnDR = popupView.findViewById(R.id.dr);
-                    Button btnHE = popupView.findViewById(R.id.he);
-                    Button btnZeren = popupView.findViewById(R.id.zeren);
-                    Button btnQuakes = popupView.findViewById(R.id.quakes);
-                    Button btnHuman = popupView.findViewById(R.id.human);
-                    Button btnliteracy = popupView.findViewById(R.id.literacy);
-                    Button btnNourish = popupView.findViewById(R.id.nourish);
+                    final Button btnCW = popupView.findViewById(R.id.cw);
+                    final Button btnEDU = popupView.findViewById(R.id.edu);
+                    final Button btnENV = popupView.findViewById(R.id.env);
+                    final Button btnDR = popupView.findViewById(R.id.dr);
+                    final Button btnHE = popupView.findViewById(R.id.he);
+                    final Button btnZeren = popupView.findViewById(R.id.zeren);
+                    final Button btnQuakes = popupView.findViewById(R.id.quakes);
+                    final Button btnHuman = popupView.findViewById(R.id.human);
+                    final Button btnliteracy = popupView.findViewById(R.id.literacy);
+                    final Button btnNourish = popupView.findViewById(R.id.nourish);
 
                     btnCW.setOnClickListener(new Button.OnClickListener() {
                         @Override
@@ -185,8 +184,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(10).isVisible() == true) {
                                 map.getLayer(10).setVisible(false);
+                                btnCW.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(10).setVisible(true);
+                                btnCW.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -196,8 +197,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(9).isVisible() == true) {
                                 map.getLayer(9).setVisible(false);
+                                btnEDU.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(9).setVisible(true);
+                                btnEDU.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -207,8 +210,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(8).isVisible() == true) {
                                 map.getLayer(8).setVisible(false);
+                                btnENV.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(8).setVisible(true);
+                                btnENV.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -218,8 +223,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(7).isVisible() == true) {
                                 map.getLayer(7).setVisible(false);
+                                btnDR.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(7).setVisible(true);
+                                btnDR.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -229,8 +236,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(6).isVisible() == true) {
                                 map.getLayer(6).setVisible(false);
+                                btnHE.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(6).setVisible(true);
+                                btnHE.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -240,8 +249,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(5).isVisible() == true) {
                                 map.getLayer(5).setVisible(false);
+                                btnZeren.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(5).setVisible(true);
+                                btnZeren.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -251,8 +262,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(4).isVisible() == true) {
                                 map.getLayer(4).setVisible(false);
+                                btnQuakes.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(4).setVisible(true);
+                                btnQuakes.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -262,8 +275,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(3).isVisible() == true) {
                                 map.getLayer(3).setVisible(false);
+                                btnHuman.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(3).setVisible(true);
+                                btnHuman.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -273,8 +288,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(2).isVisible() == true) {
                                 map.getLayer(2).setVisible(false);
+                                btnliteracy.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(2).setVisible(true);
+                                btnliteracy.setBackgroundColor(CYAN);
                             }
                         }
                     });
@@ -284,8 +301,10 @@ public class MainActivity extends AppCompatActivity {
                             // TODO Auto-generated method stub
                             if (map.getLayer(1).isVisible() == true) {
                                 map.getLayer(1).setVisible(false);
+                                btnNourish.setBackgroundColor(LTGRAY);
                             } else {
                                 map.getLayer(1).setVisible(true);
+                                btnNourish.setBackgroundColor(CYAN);
                             }
                         }
                     });
