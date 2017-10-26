@@ -14,10 +14,9 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="495dp"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:orientation="vertical"
-            android:layout_weight="0.52">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/cw"
@@ -44,31 +43,31 @@
                 android:layout_width="287dp"
                 android:layout_height="wrap_content"
                 android:text="Health Projects" />
-            <Button
-                android:id="@+id/zeren"
-                android:layout_width="287dp"
-                android:layout_height="wrap_content"
-                android:text="Zeren Index" />
-            <Button
-                android:id="@+id/quakes"
-                android:layout_width="287dp"
-                android:layout_height="wrap_content"
-                android:text="Major Earthquakes" />
-            <Button
-                android:id="@+id/human"
-                android:layout_width="287dp"
-                android:layout_height="wrap_content"
-                android:text="Human Development Index" />
-            <Button
-                android:id="@+id/literacy"
-                android:layout_width="287dp"
-                android:layout_height="wrap_content"
-                android:text="Adult Literacy Rate" />
-            <Button
-                android:id="@+id/nourish"
-                android:layout_width="287dp"
-                android:layout_height="wrap_content"
-                android:text="Undernourished Population" />
+            <!--<Button-->
+                <!--android:id="@+id/zeren"-->
+                <!--android:layout_width="287dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Zeren Index" />-->
+            <!--<Button-->
+                <!--android:id="@+id/quakes"-->
+                <!--android:layout_width="287dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Major Earthquakes" />-->
+            <!--<Button-->
+                <!--android:id="@+id/human"-->
+                <!--android:layout_width="287dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Human Development Index" />-->
+            <!--<Button-->
+                <!--android:id="@+id/literacy"-->
+                <!--android:layout_width="287dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Adult Literacy Rate" />-->
+            <!--<Button-->
+                <!--android:id="@+id/nourish"-->
+                <!--android:layout_width="287dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Undernourished Population" />-->
 
         </LinearLayout>
     </LinearLayout>

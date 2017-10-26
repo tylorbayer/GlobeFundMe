@@ -243,71 +243,71 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     });
-                    btnZeren.setOnClickListener(new Button.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            if (map.getLayer(5).isVisible() == true) {
-                                map.getLayer(5).setVisible(false);
-                                btnZeren.setBackgroundColor(LTGRAY);
-                            } else {
-                                map.getLayer(5).setVisible(true);
-                                btnZeren.setBackgroundColor(CYAN);
-                            }
-                        }
-                    });
-                    btnQuakes.setOnClickListener(new Button.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            if (map.getLayer(4).isVisible() == true) {
-                                map.getLayer(4).setVisible(false);
-                                btnQuakes.setBackgroundColor(LTGRAY);
-                            } else {
-                                map.getLayer(4).setVisible(true);
-                                btnQuakes.setBackgroundColor(CYAN);
-                            }
-                        }
-                    });
-                    btnHuman.setOnClickListener(new Button.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            if (map.getLayer(3).isVisible() == true) {
-                                map.getLayer(3).setVisible(false);
-                                btnHuman.setBackgroundColor(LTGRAY);
-                            } else {
-                                map.getLayer(3).setVisible(true);
-                                btnHuman.setBackgroundColor(CYAN);
-                            }
-                        }
-                    });
-                    btnliteracy.setOnClickListener(new Button.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            if (map.getLayer(2).isVisible() == true) {
-                                map.getLayer(2).setVisible(false);
-                                btnliteracy.setBackgroundColor(LTGRAY);
-                            } else {
-                                map.getLayer(2).setVisible(true);
-                                btnliteracy.setBackgroundColor(CYAN);
-                            }
-                        }
-                    });
-                    btnNourish.setOnClickListener(new Button.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            if (map.getLayer(1).isVisible() == true) {
-                                map.getLayer(1).setVisible(false);
-                                btnNourish.setBackgroundColor(LTGRAY);
-                            } else {
-                                map.getLayer(1).setVisible(true);
-                                btnNourish.setBackgroundColor(CYAN);
-                            }
-                        }
-                    });
+//                    btnZeren.setOnClickListener(new Button.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            // TODO Auto-generated method stub
+//                            if (map.getLayer(5).isVisible() == true) {
+//                                map.getLayer(5).setVisible(false);
+//                                btnZeren.setBackgroundColor(LTGRAY);
+//                            } else {
+//                                map.getLayer(5).setVisible(true);
+//                                btnZeren.setBackgroundColor(CYAN);
+//                            }
+//                        }
+//                    });
+//                    btnQuakes.setOnClickListener(new Button.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            // TODO Auto-generated method stub
+//                            if (map.getLayer(4).isVisible() == true) {
+//                                map.getLayer(4).setVisible(false);
+//                                btnQuakes.setBackgroundColor(LTGRAY);
+//                            } else {
+//                                map.getLayer(4).setVisible(true);
+//                                btnQuakes.setBackgroundColor(CYAN);
+//                            }
+//                        }
+//                    });
+//                    btnHuman.setOnClickListener(new Button.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            // TODO Auto-generated method stub
+//                            if (map.getLayer(3).isVisible() == true) {
+//                                map.getLayer(3).setVisible(false);
+//                                btnHuman.setBackgroundColor(LTGRAY);
+//                            } else {
+//                                map.getLayer(3).setVisible(true);
+//                                btnHuman.setBackgroundColor(CYAN);
+//                            }
+//                        }
+//                    });
+//                    btnliteracy.setOnClickListener(new Button.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            // TODO Auto-generated method stub
+//                            if (map.getLayer(2).isVisible() == true) {
+//                                map.getLayer(2).setVisible(false);
+//                                btnliteracy.setBackgroundColor(LTGRAY);
+//                            } else {
+//                                map.getLayer(2).setVisible(true);
+//                                btnliteracy.setBackgroundColor(CYAN);
+//                            }
+//                        }
+//                    });
+//                    btnNourish.setOnClickListener(new Button.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            // TODO Auto-generated method stub
+//                            if (map.getLayer(1).isVisible() == true) {
+//                                map.getLayer(1).setVisible(false);
+//                                btnNourish.setBackgroundColor(LTGRAY);
+//                            } else {
+//                                map.getLayer(1).setVisible(true);
+//                                btnNourish.setBackgroundColor(CYAN);
+//                            }
+//                        }
+//                    });
 
                     popupWindow.showAtLocation(map, START, 0, 90);
                 }
@@ -505,26 +505,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_legend) {
-            // show the legend dialog
-            new LegendDialogFragment().show(getFragmentManager(), LegendDialogFragment.TAG);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//        if (id == R.id.action_legend) {
+//            // show the legend dialog
+//            new LegendDialogFragment().show(getFragmentManager(), LegendDialogFragment.TAG);
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     public MapView getMap() {
         return map;
