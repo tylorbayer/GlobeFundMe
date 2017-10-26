@@ -39,12 +39,11 @@ public class LoginActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Views
-//        mStatusTextView = findViewById(R.id.status);
+
 
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
-//        findViewById(R.id.sign_out_button).setOnClickListener(this);
+//        findViewById(R.id.action_logout).setOnClickListener(this);
 //        findViewById(R.id.disconnect_button).setOnClickListener(this);
 
         // [START configure_signin]
@@ -218,7 +217,7 @@ public class LoginActivity extends AppCompatActivity implements
             case R.id.sign_in_button:
                 signIn();
                 break;
-//            case R.id.sign_out_button:
+//            case R.id.action_logout:
 //                signOut();
 //                break;
 //            case R.id.disconnect_button:

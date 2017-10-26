@@ -4,9 +4,8 @@
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/action_legend"
-        android:orderInCategory="1"
-        app:showAsAction="ifRoom"
-        android:icon="@android:drawable/ic_menu_info_details"
-        android:title="@string/legend"/>
+        android:id="@+id/action_logout"
+        android:title="Sign Out"
+        android:visible="true"
+        app:showAsAction="never" />
 </menu>
