@@ -112,10 +112,11 @@ public class MainActivity extends AppCompatActivity {
                     count = new AtomicInteger();
                     for (Layer layer : layers) {
                         // If the layer has not been initialized or is invisible, do nothing.
-                        if (!layer.isInitialized() || !layer.isVisible())
+                        if (!layer.isInitialized() || !layer.isVisible()) {
                             continue;
+                        }
 
-                        if (layer instanceof ArcGISFeatureLayer) {
+                        else if (layer instanceof ArcGISFeatureLayer) {
                             // Query feature layer and display popups
                             ArcGISFeatureLayer featureLayer = (ArcGISFeatureLayer) layer;
                             if (featureLayer.getPopupInfo() != null && featureLayer.isVisible() == true) {
@@ -162,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     }
+                    progressDialog.dismiss();
                 }
             }
         });
@@ -185,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 //                        }
 //                    }
 //                }
-                if (popupWindow.isShowing() == false) {
+                if (popupWindow.isShowing() == false && map.isLoaded() == true) {
 
                     final Button btnCW = popupView.findViewById(R.id.cw);
                     final Button btnEDU = popupView.findViewById(R.id.edu);
